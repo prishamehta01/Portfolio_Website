@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Universal - remove built-in browser margin and padding */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* font and scrolling */
+html{
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Nav Bar styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: aliceblue;
+    margin-left:2.5em;
+    background: linear-gradient(45deg, #00bfff, #1e90ff, #0000ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.logo:hover {
+    transform: perspective(500px) rotateY(15deg);
+}
+
+nav{
+    width:100%; 
+    height:70px;
+    display:flex;
+    align-items: center;
+    gap:1.5em;
+    justify-content:space-between;
+    padding:10px;
+    background-color: aliceblue;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    
+}
+
+.links{
+    display: flex;
+    gap: 2rem;
+    margin-right: 3em;
+}
+
+.links a, .resume a{
+    text-decoration: none;
+    font-size: large;
+    padding: 13px;
+    color:black;
+}
+
+nav .links a:hover{
+    background-color: black;
+    color:white;
+    border-radius: 1em;
+}
+
+nav .resume{
+    display: flex;
+    justify-content: end;
+    margin-left: 10em;
+}
+
+.resume a{
+    background-color: #121212;
+    color:white;
+    border:1px solid black;
+    border-radius: 1em;
+}
+
+nav .resume a:hover{
+    background-color: white;
+    color:black;
+    border-radius: 1em;
+}
+
+i{
+    margin-right: 5px;
+}
+
+/* Home Page styling */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.introduction{
+    height:calc(90vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:white;
+    background: rgba(0, 0, 0, 0.5) url("./intro_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.introduction h1{
+    font-size: 3.5em;
+    font-weight: 800;
+    margin-top:100px;
+    margin-bottom: 0.5em;
+    text-shadow: 0 0 10px blue, 0 0 20px blue;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+.introduction p{
+    font-size: x-large;
+    font-weight: 800;
+    margin-left: 2em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+.view{
+    margin-top: 2em;
+    margin: 1em;
+    padding: 0.8em;
+    color:white;
+    background-color: black;
+    border:2px solid aliceblue;
+    border-radius: 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: 800;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+.view::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: conic-gradient(
+        from 0deg,
+        #0077be,
+        #1e90ff,
+        #00bfff,
+        #87ceeb,
+        #0077be   
+    );
+    border-radius: 22px; 
+    z-index: -1;
+}
+
+.view::after {
+    content: '';
+    position: absolute;
+    top: 1px; 
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    background: black;
+    border-radius: 18px;
+    z-index: -1;
+}
+
+.view:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
+}
+
+
+/* About Page styling */
+.aboutMe {
+    background-color: black;
+    color: aliceblue;
+    padding: 1em; 
+}
+
+.aboutMe h1 {
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 0 0 10px blue, 0 0 20px blue;
+    margin-bottom: 1em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+
+.cardContainer{
+    display: grid;
+    grid-template-columns: repeat(autofit,minmax(200px, 1fr));
+    padding:1em;
+    margin-bottom: 1em;
+}
+
+.cards h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.cards{
+    border:1px solid black;
+    border-radius: 14px;
+    background-color: white;
+    color:black;
+    margin:15px;
+    padding:1em;
+    transform-style: preserve-3d;
+    perspective: 1000px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform; 
+    cursor: pointer;
+}
+
+.cards:hover{
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+.cards p{
+    font-weight: 500;
+    line-height:1.3em;
+}
+
+.card1{
+    
+    grid-row:1/2;
+    grid-column: 3/4;
+    background-color: hsl(217, 19%, 15%);
+    color: aliceblue;
+    border: 1px solid #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.1);
+}
+
+.card2{
+    grid-row:1/2;
+    grid-column:1/3;
+    background-color: hsl(217, 19%, 15%);
+    color: aliceblue;
+    border: 1px solid #2ecc71;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.1);
+    font-size: 1.1em;
+}
+
+.card3{
+    grid-row:1/3;
+    grid-column: 4/5;
+    background-color: hsl(217, 19%, 15%);
+    color: aliceblue;
+    border: 1px solid #9b59b6; 
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.1);
+    font-size: 1.2em;
+}
+
+.card4{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    background-color: hsl(217, 19%, 15%);
+    color: aliceblue;
+    border: 1px solid #e74c3c;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.1);
+}
+
+.card5{
+    grid-row: 2/3;
+    grid-column: 2/4;
+    background-color: hsl(217, 19%, 15%);
+    color: aliceblue;
+    border: 1px solid #f1c40f; 
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.1);
+    font-size: 1.1em;
+}
+
+/* Project page styling */
+.projectContainer{
+    background: linear-gradient(120deg, #121212, #1e1e1e);
+    color:white;
+    padding: 1em;
+}
+
+.projectContainer h1, .skillset h1 {
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 0 0 10px blue, 0 0 20px blue;
+    margin-bottom: 1em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.projCards{
+    display: flex;
+    justify-content: center;
+    gap:2em;
+    padding: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+
+.c {
+    height: auto;
+    min-height: 500px;
+    width: 400px;
+    padding: 1.5em;
+    margin: 0.5em;
+    border: none;
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    color: white;
+    border-radius: 1em;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border:1px solid lightblue;
+}
+
+
+.c:hover {
+    transform: translateY(-10px);
+    box-shadow:1px 7px 7px 10px rgba(0, 191, 255, 0.2);
+}
+
+.c h2{
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color:lightblue;
+}
+
+.c p{
+    margin-top:5px;
+}
+
+.c a{
+    text-decoration: none;
+    color:white
+}
+
+.c img{
+    border-radius: 10px;
+    height:180px;
+    width:300px;
+    border:1px solid aliceblue;
+}
+
+.description{
+    font-size:14px;
+    text-align:justify;
+}
+
+
+/* Skills set page */
+.skillset{
+    background-color: black;
+    color:white;
+    padding: 1em;
+    padding-bottom: 2em;
+}
+
+
+.skillcontainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:2em;
+    padding: 10px;
+    margin: 10px;
+}
+
+.skillcategory{
+    background-color: #1e1e1e;
+    border: 1px solid lightblue;
+    border-radius: 15px;
+    padding: 1.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skillcategory:hover{
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+.skillcategory h2{
+    color: lightblue;
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.skillList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8em;
+    margin:0.5em;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.skill:hover{
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.skill i {
+    color: lightblue;
+    margin-right: 5px;
+}
