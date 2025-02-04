@@ -301,7 +301,7 @@ i{
     padding: 1em;
 }
 
-.projectContainer h1, .skillset h1 {
+.projectContainer h1, .skillset h1 , .contactme h1{
     font-size: 3em;
     text-align: center;
     text-shadow: 0 0 10px blue, 0 0 20px blue;
@@ -431,4 +431,74 @@ i{
 .skill i {
     color: lightblue;
     margin-right: 5px;
+}
+
+/* Contact page */
+.contactme {
+    background: linear-gradient(120deg, #121212, #1e1e1e);
+    color: white;
+    padding: 3em 1em;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.connect-message {
+    color: lightblue;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.contact-btn {
+    background-color: transparent;
+    border: 2px solid lightblue;
+    color: white;
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+.contact-btn i {
+    font-size: 1.2em;
+}
+
+.social-links {
+    display: flex;
+    gap: 2em;
+    margin-top: 1em;
+}
+
+.social-links a {
+    color: white;
+    font-size: 2.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: lightblue;
+    transform: scale(1.2);
 }
