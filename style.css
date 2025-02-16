@@ -502,3 +502,116 @@ i{
     color: lightblue;
     transform: scale(1.2);
 }
+
+
+/*Mobile features*/
+@media screen and (max-width:768px){
+    nav {
+        height: auto;
+        flex-direction: column;
+        padding: 1em 0;
+    }
+
+    .logo {
+        margin: 0;
+        text-align: center;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 1em 0;
+        align-items: center;
+    }
+
+    .links a {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav .resume {
+        margin: 0;
+    }
+
+    /* Home section */
+    .introduction h1 {
+        font-size: 2em;
+        text-align: center;
+        padding: 0 1em;
+    }
+
+    .introduction p {
+        font-size: 1.2em;
+        text-align: center;
+        margin: 0;
+        padding: 0 1em;
+    }
+
+    /* About section */
+    .cardContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em;
+    }
+
+    .cards {
+        margin: 0.5em;
+    }
+
+    .card1, .card2, .card3, .card4, .card5 {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    /* Project section */
+    .projCards {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        gap: 1em;
+    }
+
+    .c {
+        width: 90%;
+        min-height: auto;
+    }
+
+    .c img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Skills section */
+    .skillcontainer {
+        grid-template-columns: 1fr;
+        gap: 1em;
+        padding: 0.5em;
+    }
+
+    .skillcategory {
+        padding: 1em;
+    }
+
+    .skill {
+        padding: 0.6em;
+        margin: 0.3em;
+        font-size: 0.9em;
+    }
+
+    /* Contact section */
+    .contact-content {
+        padding: 0 1em;
+    }
+
+    .connect-message {
+        font-size: 1em;
+    }
+
+    .social-links {
+        gap: 1.5em;
+    }
+
+    .social-links a {
+        font-size: 2em;
+    }
+}
